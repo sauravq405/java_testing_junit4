@@ -13,6 +13,7 @@
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.9.2</junit.version>
+        <junit4.version>4.13.2</junit4.version>
     </properties>
 
     <dependencyManagement>
@@ -33,11 +34,24 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit4.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
+                <!-- <groupId></groupId>-->
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M8</version>
             </plugin>
